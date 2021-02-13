@@ -44,14 +44,7 @@ def fetch_hubble_id_photos(image_id, number):
     image = response.json()['image_files'][-1]
     download_image(f"https:{image['file_url']}", f"images/hubble{image_id}_{number}{get_link_expansion(image['file_url'])}")
     resize_picture(f"images/hubble{image_id}_{number}{get_link_expansion(image['file_url'])}")
-    
 
-# download_image('https://upload.wikimedia.org/wikipedia/commons/3/3f/HST-SM4.jpeg', 'images/hubble.jpeg')
-# fetch_spacex_last_launch()
-# response = requests.get('http://hubblesite.org/api/v3/images/holiday_cards')
-# response.raise_for_status()
-# for number, i in enumerate(response.json()):
-#     fetch_hubble_id_photos(i['id'], number)
 
 load_dotenv()
 
