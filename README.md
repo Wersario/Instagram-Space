@@ -7,7 +7,7 @@
 ### Как установить
 1. Создайте файл `.env` и положите ваши пароль и логин в переменные `INSTA_LOGIN` и `INSTA_PASSWORD`. Пример: 
     ```
-    INSTA_LOGIN=dmnvcool@mailru
+    INSTA_LOGIN=dvmncool@mailru
     INSTA_PASSWORD=12345
     ```
 
