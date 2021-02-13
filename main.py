@@ -1,5 +1,6 @@
 import requests
 import os
+import shutil
 from PIL import Image
 from instabot import Bot
 from dotenv import load_dotenv
@@ -47,9 +48,16 @@ def fetch_hubble_id_photos(image_id, number):
 
 
 load_dotenv()
-
+shutil.rmtree('config')
 bot = Bot()
 bot.login(username=os.getenv("INSTA_LOGIN"), password=os.getenv("INSTA_PASSWORD"))
 
-for number, photo_path in enumerate(listdir("images")):
+fetch_spacex_last_launch()
+for number, photo_path in enumerate(listdir('images')):
     bot.upload_photo(f'images/{photo_path}', caption=f'Beatiful space photo number {number}')
+
+
+# все, что ниже, используется для чистки лиших файлов
+for item in os.listdir('images'):
+    if item.endswith(".REMOVE_ME"):
+        os.remove(item)
