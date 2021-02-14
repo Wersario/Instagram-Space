@@ -18,4 +18,4 @@ for number, photo_path in enumerate(listdir('images')):
 # все, что ниже, используется для чистки лиших файлов
 for item in os.listdir('images'):
     if item.endswith(".REMOVE_ME"):
-        os.remove(item)
+        os.remove(f'images/{item}')
