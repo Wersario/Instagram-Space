@@ -6,7 +6,8 @@ from os import listdir
 
 
 load_dotenv()
-shutil.rmtree('config')
+if os.path.exists('config'):
+    shutil.rmtree('config')
 bot = Bot()
 bot.login(username=os.getenv("INSTA_LOGIN"), password=os.getenv("INSTA_PASSWORD"))
 
