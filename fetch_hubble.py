@@ -4,8 +4,8 @@ from PIL import Image
 
 
 def get_link_expansion(link):
-    split_link = link.split('.')
-    return '.' + split_link[-1]
+    separated_link = link.split('.')
+    return '.' + separated_link[-1]
 
 
 def resize_picture(path):
