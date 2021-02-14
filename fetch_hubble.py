@@ -32,4 +32,3 @@ def fetch_hubble_id_photos(image_id, number):
     image = response.json()['image_files'][-1]
     download_image(f"https:{image['file_url']}", f"images/hubble{image_id}_{number}{get_link_expansion(image['file_url'])}")
     resize_picture(f"images/hubble{image_id}_{number}{get_link_expansion(image['file_url'])}")
-    
