@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 
 
-def get_link_expansion(link):
+def get_link_extension(link):
     separated_link = link.split('.')
     return '.' + separated_link[-1]
 
@@ -12,7 +12,7 @@ def resize_picture(path):
     image = Image.open(path)
     image.thumbnail((1080, 1080))
     image.convert('RGB').save(f'{path.split(".")[0]}.jpg')
-    if get_link_expansion(path) != '.jpg':
+    if get_link_extension(path) != '.jpg':
         os.remove(path)
 
 
